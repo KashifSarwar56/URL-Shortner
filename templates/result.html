@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortened</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 450px;
+        }
+        a {
+            display: block;
+            margin: 15px 0;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            margin-top: 15px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>✅ Your Shortened URL</h2>
+        <a href="{{ request.host_url }}{{ short_url }}" target="_blank">{{ request.host_url }}{{ short_url }}</a>
+
+        <h3>📌 Scan QR Code</h3>
+        <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+
+        <br>
+        <button onclick="window.location.href='/'">Shorten Another</button>
+    </div>
+</body>
+</html>
