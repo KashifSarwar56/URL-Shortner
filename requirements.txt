@@ -1,0 +1,5 @@
+Flask==2.3.3
+qrcode==7.4.2
+google-api-python-client==2.107.0
+requests==2.31.0
+gunicorn==21.2.0
